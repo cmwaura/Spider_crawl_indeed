@@ -3,7 +3,6 @@ import codecs
 import glob
 from nltk import FreqDist
 from nltk.corpus import stopwords
-import nltk
 from nltk import pos_tag as pt
 from bs4 import BeautifulSoup
 
@@ -14,11 +13,23 @@ loose_words = [
 class UtilCleanUp(object):
 
     def __init__(self):
+        '''
+         instantiating the files and then paths that we will use in this process
+        '''
+
         self.file2 = codecs.open('new1.txt', mode='w', encoding='utf-8')
         self.PATH = os.path.abspath(os.path.dirname('__file__'))
         self.SYMBOL = "\\"
 
     def cleanse_html(self):
+        '''
+        in this process we will cleanse all the collected html files and gather all the text into one
+        text file that will be readily available for use for the next class. Please note one major thing
+        is that once the html files are sanitized, they will be removed from  the red_scrap folder so before you
+        activate the utility process, if you wanted to take a look at the folder this would be the last time to do
+        that
+        :return: a new text file format
+        '''
         for f in glob.glob('*.html'):
             html_file = '{h}{s}{y}'.format(h=self.PATH, s=self.SYMBOL, y=f)
             self.html = open(html_file).read()
@@ -45,6 +56,11 @@ class CountFreq(object):
         self.loose_words = loose_words
 
     def clean_text(self):
+        '''
+        this method will clean all the data in new1.txt as well as transfer the data from a text file to
+        a tokenized format that will be readily available for nltk to work with.
+        :return: sanitized and tokenized words.
+        '''
         stop = self.stop_words
         text = self.txtfile
         for lines in text:
@@ -66,6 +82,7 @@ class CountFreq(object):
         self.fdist = FreqDist(revised_noun_descriptor)
         self.fdist.plot(75, cumulative=False)
         return self.fdist
+
 
 
 if __name__ == '__main__':
