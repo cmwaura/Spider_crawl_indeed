@@ -61,9 +61,10 @@ DOWNLOAD_HANDLERS = {'s3': None,}
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'red_scrap.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'red_scrap.pipelines.RedJsonPipeline':300,
+    # 'red_scrap.pipelines.RedDuplicatePipeline':300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

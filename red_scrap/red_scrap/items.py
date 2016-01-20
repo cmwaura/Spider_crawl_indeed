@@ -14,12 +14,9 @@ class RedScrapItem(scrapy.Item):
     url = scrapy.Field()
     location = scrapy.Field()
     company = scrapy.Field()
-
-
-class IncomeScrapItem(scrapy.Item):
-    # define the fields for your item here like:
     quantity = scrapy.Field()
-    # quantity = scrapy.Field()
+
 
 class DescriptionScrapItem(scrapy.Item):
-    text = scrapy.Field()
+
+    description = scrapy.Field()
