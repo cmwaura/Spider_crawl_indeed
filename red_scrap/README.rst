@@ -18,7 +18,9 @@ S.1.2: Installation.
 all versions (mac, windows)
 
 1)Create a new directory::
-      mkdir <directory>
+
+            mkdir <directory>
+            
 **mac OS: This process may seem familiar**
 
 2) create a virtual env::
