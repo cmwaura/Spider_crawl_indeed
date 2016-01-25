@@ -77,7 +77,8 @@ press the 'return' key and watch scrapy do its magic.
 Things to note so far:
 * red_scrap_manager is a python exec with click functionality so if you are stuck and you would like 
 some help ::
-    red_scrap_manager --help
+
+                        red_scrap_manager --help
     
 The documentation of the process should appear on your command line.
 
@@ -90,7 +91,8 @@ I am currently working on a solution to that and have it as precise as possible.
 S.2.2.1 Dice 
 -------------
 (job=str, state=str)::
-    --limit(Default) = None
+
+            --limit(Default) = None
 
 Ensure that if you choose dice you enter the limit else the spider will run but nothing will be displayed or stored
 as a JSON.
@@ -98,7 +100,8 @@ as a JSON.
 S.2.2.2: Descriptor 
 --------------------
 (job=str, state=str)::
-    --limit(Default) = None
+
+            --limit(Default) = None
 
 Ensure that if you choose Descriptor you enter the limit else the spider will run but nothing will be displayed or stored
 as a HTML file.
@@ -106,7 +109,9 @@ as a HTML file.
 S.2.2.3: Indeed 
 ---------------
 (job=str, state=str)::
-    --limit is discouraged
+
+            --limit is discouraged
+
 Do not add a limit to the indeed spider. Either way it will run all the jobs that are on that specific request and hence limit 
 is discouraged. Plus it saves up some typing stamina points.
 
