@@ -17,21 +17,22 @@ S.1.2: Installation.
 -------------------
 all versions (mac, windows)
 
-1)Create a new directory::
+1. Create a new directory::
 
             mkdir <directory>
             
 **mac OS: This process may seem familiar**
 
-2) create a virtual env::
-      virtualenv venv
+2.  create a virtual env::
+
+            virtualenv venv
       
 **Windows:** windows is a little bit trickier than Unix/Mac. I will however guide you in the process step by step.Please note that this guide assumes that you have a current installation of anaconda present. This is important since the utilities of this application will need numpy to run and that tends to be a crinkle in the you-know-what.
 
-2) download pywin.exe and save in on your desktop or C:\
-3) create a conda environment with the packages in the requirements file. This may take a while since scrapy has a few dependancies that will also be installed.
-4) activate your env.
-5) point your conda/pip to your pywin installation and through 'pip install 'c:\pywin.exe' -[path to the installation].
+2. download pywin.exe and save in on your desktop or C:\
+3. create a conda environment with the packages in the requirements file. This may take a while since scrapy has a few dependancies that will also be installed.
+4. activate your env.
+5. point your conda/pip to your pywin installation and through 'pip install 'c:\pywin.exe' -[path to the installation].
 
 
 Note: I plan to upload this package to pypi so in the coming future it will just be downloaded via 'pip'
