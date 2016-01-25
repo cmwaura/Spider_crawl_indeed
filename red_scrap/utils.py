@@ -21,7 +21,7 @@ class UtilCleanUp(object):
         self.PATH = os.path.abspath(os.path.dirname('__file__'))
         self.SYMBOL = "\\"
 
-    def cleanse_html(self, cleanse=True):
+    def cleanse_html(self):
         '''
         in this process we will cleanse all the collected html files and gather all the text into one
         text file that will be readily available for use for the next class. Please note one major thing
@@ -33,7 +33,7 @@ class UtilCleanUp(object):
         for f in glob.glob('*.html'):
             html_file = '{h}{s}{y}'.format(h=self.PATH, s=self.SYMBOL, y=f)
             self.html = open(html_file).read()
-
+            print html_file
             # return html
             soup = BeautifulSoup(self.html, "lxml")
 
@@ -90,7 +90,7 @@ class CountFreq(object):
         :return: a matplotlib graph
         '''
 
-        return self.fdist.plot(75, cumulative=cumulative)
+        return self.fdist.plot(100, cumulative=cumulative)
 
 
 

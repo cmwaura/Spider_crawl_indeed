@@ -6,7 +6,7 @@ from red_scrap.items import RedScrapItem, DescriptionScrapItem, RedDiceItem
 
 
 class RedScrapSpider (CrawlSpider):
-    name = "indeed"
+    name = "Indeed"
     allowed_domains = ["indeed.com"]
 
     # python+analyst
@@ -53,13 +53,8 @@ class RedScrapSpider (CrawlSpider):
             item['company'] = sel.xpath('.//span[@itemprop="name"]/text()').extract()
             item['location'] = sel.xpath('.//span[@itemprop="addressLocality"]/text()').extract()
             yield item
-
-        for sel in response.xpath('//div [@id="SALARY_rbo"]'):
-            item = RedScrapItem()
-
-            item["quantity"] = sel.xpath('.//a/@title').extract()
-
-            yield item
+        #
+       
 
 
 class RedDescriptionSpider(CrawlSpider):
