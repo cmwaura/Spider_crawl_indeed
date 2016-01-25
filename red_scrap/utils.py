@@ -21,7 +21,7 @@ class UtilCleanUp(object):
         self.PATH = os.path.abspath(os.path.dirname('__file__'))
         self.SYMBOL = "\\"
 
-    def cleanse_html(self):
+    def cleanse_html(self, cleanse=True):
         '''
         in this process we will cleanse all the collected html files and gather all the text into one
         text file that will be readily available for use for the next class. Please note one major thing
@@ -46,11 +46,11 @@ class UtilCleanUp(object):
             self.file2.write(text)
             os.remove(html_file)
 
-#
-# class CountFreq(UtilCleanUp):
+
+
 class CountFreq(object):
-    def __init__(self, *args, **kwargs):
-        self.txtfile = codecs.open('new1.txt', encoding='utf-8')
+    def __init__(self,  *args, **kwargs):
+        self.txt_file = codecs.open('new1.txt', encoding='utf-8')
         self.stop_words = stopwords.words('english')
         self.clean_words = []
         self.loose_words = loose_words
@@ -62,7 +62,7 @@ class CountFreq(object):
         :return: sanitized and tokenized words.
         '''
         stop = self.stop_words
-        text = self.txtfile
+        text = self.txt_file
         for lines in text:
             clean_words = [word for word in lines.lower().split() if word not in stop]
             self.clean_words.append(clean_words)
@@ -80,14 +80,25 @@ class CountFreq(object):
         noun_descriptor = [word for word, pos in classified_text if pos == 'NN']
         revised_noun_descriptor = [word for word in noun_descriptor if word not in self.loose_words]
         self.fdist = FreqDist(revised_noun_descriptor)
-        self.fdist.plot(75, cumulative=False)
         return self.fdist
+
+    def graph_freq(self, cumulative):
+        '''
+
+        :param cumulative: Boolean value, when true it graphs the cumulative text score producing a diminishing
+        return graph
+        :return: a matplotlib graph
+        '''
+
+        return self.fdist.plot(75, cumulative=cumulative)
+
 
 
 
 if __name__ == '__main__':
-    # util = UtilCleanUp()
-    # util.cleanse_html()
+    util = UtilCleanUp()
+    util.cleanse_html()
     freq = CountFreq()
     freq.clean_text()
     print freq.word_freq()
+    freq.graph_freq(False)

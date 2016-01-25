@@ -17,6 +17,15 @@ class RedScrapItem(scrapy.Item):
     quantity = scrapy.Field()
 
 
+class RedDiceItem(scrapy.Item):
+    # define the fields for your item here like:
+    title = scrapy.Field()
+    url = scrapy.Field()
+    location = scrapy.Field()
+    company = scrapy.Field()
+    quantity = scrapy.Field()
+
+
 class DescriptionScrapItem(scrapy.Item):
 
     description = scrapy.Field()

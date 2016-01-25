@@ -23,10 +23,14 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.01',
-
+    version='0.1',
+    py_modules= ['red_scrap_manager.py'],
     description='A job keyword extractor',
     long_description=long_description,
+    entry_points='''
+        [console_scripts]
+        red_scrap_manager=red_scrap_manager:cli
+    ''',
 
     # The project's main homepage.
     url='https://github.com/cmwaura/Spider_crawl_indeed',
@@ -103,9 +107,9 @@ setup(
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
-    entry_points={
-        'console_scripts': [
-            'sample=sample:main',
-        ],
-    },
+    # entry_points={
+    #     'console_scripts': [
+    #         'sample=sample:main',
+    #     ],
+    # },
 )

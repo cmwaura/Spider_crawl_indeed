@@ -6,29 +6,20 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 from scrapy.exceptions import DropItem
-# import pandas as pd
+
+
 import os
 import re
 import json
 
 
-# class RedDuplicatePipeline(object):
-#     def __init__(self):
-#         self.seen_quantity = set()
-#
-#     def process_item(self, item, spider):
-#         # if item['quantity'] in self.seen_quantity:
-        #     raise DropItem("duplicate item found:%s" % item)
-        # else:
-        #     self.seen_quantity.add(item['quantity'])
-
-
-        # yield item
 
 class RedJsonPipeline(object):
 
     def __init__(self):
-        self.file = open('items.json', 'wb')
+        self.file = open('indeed.json', 'wb')
+        self.dice_file = open('dice.json', 'wb')
+        # self.spider = RedScrapSpider()
 
     def process_item(self, item, spider):
         '''
@@ -38,8 +29,15 @@ class RedJsonPipeline(object):
         :return: a json file
 
         '''
-        line = json.dumps(dict(item)) + "\n"
-        self.file.write(line)
+        if spider.name == 'indeed':
+            line = json.dumps(dict(item)) + "\n"
+            self.file.write(line)
+        elif spider.name == 'Dice':
+            line = json.dumps(dict(item)) + "\n"
+            self.dice_file.write(line)
+        else:
+            return "spider not found"
+
         return item
 
 
