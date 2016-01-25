@@ -190,7 +190,8 @@ S.Null: TODO:
 * Create a miniature search engine.
 * Increase more tools in the Util section(bigrams, n-grams)
 
-If you want to contribute or have a suggestion that you would like for me to implement please feel free to message me on here. 
+If you want to contribute or have a suggestion that you would like for me to implement, please feel free to message me on here or my email: righteousprophet33@gmail.com
+
 S.Vote: Of Thanks.
 ------------------
 * stack overflow!!!
