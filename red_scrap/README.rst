@@ -181,9 +181,23 @@ if you did::
     >>> Freque.graph_freq(cumulative = True)
     
 you would get a graph of diminishing returns or half a parabola
-.
+
+S.Null: TODO:
+------------
+
+* Add income vs cost of living analysis for each choice
+* Add to Solr
+* Create a miniature search engine.
+* Increase more tools in the Util section(bigrams, n-grams)
+
+If you want to contribute or have a suggestion that you would like for me to implement please feel free to message me on here. 
+S.Vote: Of Thanks.
+------------------
+* stack overflow!!!
 
 
+
+Cheers and enjoy
 
 
     
