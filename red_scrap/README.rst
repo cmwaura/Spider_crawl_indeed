@@ -15,7 +15,7 @@ This application fully supports python 2.7 with full support of python 3.0 comin
 
 Installation.
 -------------
-* **Windows:**windows is a little bit trickier than Unix/Mac. I will however guide you in the process step by step.Please note that this guide assumes that you have a current installation of anaconda present. This is important since the utilities of this application will need numpy to run and that tends to be a crinkle in the you-know-what.
+**Windows:** windows is a little bit trickier than Unix/Mac. I will however guide you in the process step by step.Please note that this guide assumes that you have a current installation of anaconda present. This is important since the utilities of this application will need numpy to run and that tends to be a crinkle in the you-know-what.
 
 1) download pywin.exe and save in on your desktop or C:\
 2) create a conda environment with the packages in the requirements file. This may take a while since scrapy has a few dependancies that will also be installed
